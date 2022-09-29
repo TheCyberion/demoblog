@@ -1,0 +1,41 @@
+<h1>{{voiture}}</h1>
+
+{#<p>{{desc}}</p>
+
+{% if prix > 1500 and voiture == "R5" %}
+
+         {{prix}}€
+{% endif %}
+
+{% if desc ends with "cher" %}
+
+    <a href={% extends 'base.html.twig' %}
+#}
+{% block title %}Bonjour cher clients{% endblock %}
+
+{% block body %}
+<section class="table">
+
+{% for item in table %}
+ {#item est une variable de réception: elle réceptionnne un article par tour de boucle#}
+ {#articles est le tableau envoyé depuis la methode index()#}   
+
+<table class="col-md-4 mx-auto text-center border border-dark mb-3 p-3 mt-3 mr-1">
+    <h2>{{item.title}}</h2>
+    <div class="modele"></div>
+    {#syntaxe twig : symfony accède à la propriété via son getter#}
+    <div class= "marque"> de la marque $marque </div>
+    {#date() est un filtre twig: il permet de convertir un objet DateTime en une chaine de caractère #}
+    <div class="prix">
+    <div class="description">
+    {{item.content|raw}}
+    {#raw#}
+    <a href="{{path('blog_show', {id: item.id})}}" class="btn btn-primary">Lire la suite</a>
+
+    {# path() permet de generer un lien vers une page#}
+    {# le 1er arg est le nom de la route (name=xxx) #}
+    
+</tablele>
+{% endfor %}
+</section>
+{% endblock %}

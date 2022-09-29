@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+
+
+
+
+{{ form_start(form)}}
+      {{form_row(form.modele)}}
+      {{form_row(form.marque) }}
+      {{form_row(form.prix) }}
+      {{form_row(form.description) }}
+
+
+    
+    <button type="submit" class="btn btny-info mt2">
+   
+
+    {% if editMode %}
+        Enregistrer les modifications
+    {% else %}    
+        Ajouter
+    {% endif %}
+{{ form_end(form) }} 
+   </button>
+
+{% endblock %}
+
+
